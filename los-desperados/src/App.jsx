@@ -12,10 +12,9 @@ function App() {
 
         <Header/>
         <Presentation />
-    </div>
-
-        <Header />
+        <Recherche />
         <Footer />
+    </div>
 
   );
 }
