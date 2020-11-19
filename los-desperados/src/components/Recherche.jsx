@@ -12,7 +12,7 @@ class Recherche extends React.Component {
         this.state = {
             event: [],
             loading: true,
-            seasons: ["goldorak"]
+            seasons: []
 
         }
         this.getRecherche = this.getRecherche.bind(this);
@@ -41,15 +41,15 @@ class Recherche extends React.Component {
         {
             event.map(season => (
                 bool = false,
+                seasons.length == 0 ? bool = false : bool = true,
+                console.log(seasons.length),
                 seasons.map(year => (
-                    season.strSeason == year ? bool = true : bool = false,
-                    console.log("HeyHoooooooo")
+                    season.strSeason == year ? bool = true : bool = false
+
                 )
                 ),
-                bool ? bool=true : seasons.push({season})
-                    // this.setState({seasons : season})
+                bool ? bool=true : seasons.push(season.strSeason)
             ))
-            // console.log(seasons);
         };
 
 
@@ -62,11 +62,11 @@ class Recherche extends React.Component {
 
         return (
             <div>
-                {event.map(season => (
+                {seasons.map(season => (
                     <div>
                         <label>
                             <select type="select" >
-                                <option value={season.strSeason}>{season.strSeason}</option>
+                                <option value={season}>{season}</option>
                             </select>
                         </label>
                     </div>
