@@ -14,6 +14,7 @@
     color: white;
     font-size: 3rem;
     font-weight: inherit;
+    padding-top: 1rem;
   }
   #presentation-text {
     margin-right: 5%;
@@ -51,6 +52,7 @@
     color: white;
     font-size: 3rem;
     font-weight: inherit;
+    padding-top: 1rem;
   }
 
   #presentation-text {
@@ -87,13 +89,13 @@
   }
   #presentation-title {
     margin: 0px;
-    padding-top: 0.5rem;
+    margin-top: 1rem;
     color: white;
     font-size: 2rem;
     font-weight: inherit;
   }
   .presentation-div-text {
-    margin-top: 5rem;
+    margin-top: 7rem;
   }
   .presentation-text {
     font-size: 0.5rem;
