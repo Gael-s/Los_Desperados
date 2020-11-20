@@ -46,7 +46,6 @@ class Recherche extends React.Component {
           seasons: seasons,
         });
       });
-    // this.setState({event : [{strSeason: "1950-1951"},{strSeason: "1951-1952"}]});
   }
 
   getRecherche() {
@@ -71,19 +70,6 @@ class Recherche extends React.Component {
   render() {
     const { seasons } = this.state;
     const { event } = this.state;
-    // let bool = false;
-    // {
-    //   event.map(
-    //     (season) => (
-    //       (bool = false),
-    //       seasons.length == 0 ? (bool = false) : (bool = true),
-    //       seasons.map((year) =>
-    //         season.strSeason == year ? (bool = true) : (bool = false)
-    //       ),
-    //       bool ? (bool = true) : seasons.push(season.strSeason)
-    //     )
-    //   );
-    // }
 
     return (
       <div>
