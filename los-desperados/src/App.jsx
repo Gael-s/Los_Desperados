@@ -14,9 +14,6 @@ function App() {
       <Header />
       <Presentation />
       <Recherche />
-      <div>
-        <h2 className="titreResultat">Results</h2>
-      </div>
       <Resultat />
       <Footer />
     </div>
