@@ -5,6 +5,7 @@ import axios from "axios";
 import Resultat from "./Resultat/Resultat";
 
 import "./Resultat/Resultat.css";
+import "./Recherche.css";
 
 class Recherche extends React.Component {
   constructor(props) {
@@ -86,7 +87,9 @@ class Recherche extends React.Component {
 
     return (
       <div>
-        <div>
+        <div className="select-btn-background">
+          <h2 className="banana-title">Hey Banana make your bet !</h2>
+        <div className="saison-select">
           <label>
             <select
               type="select"
@@ -100,15 +103,18 @@ class Recherche extends React.Component {
           </label>
         </div>
 
+        <div className="bouton">
         <button type="button" onClick={this.getRecherche}>
           Give me the results
         </button>
+        </div>
+        </div>
         <div className="resultats">
         <h2 className="titreResultat">Results</h2>
         
         
         {event.map((season) => (
-          <div >
+          <div>
             <Resultat
               key={season.idEvent}
               strSeason={season.strSeason}
