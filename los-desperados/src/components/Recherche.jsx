@@ -4,6 +4,8 @@ import axios from "axios";
 
 import Resultat from "./Resultat/Resultat";
 
+import "./Resultat/Resultat.css";
+
 class Recherche extends React.Component {
   constructor(props) {
     super(props);
@@ -11,7 +13,7 @@ class Recherche extends React.Component {
       event: [],
       loading: true,
       seasons: [],
-      selectedSeason: ""
+      selectedSeason: "",
     };
     this.handleChangeSeason = this.handleChangeSeason.bind(this);
     this.getRecherche = this.getRecherche.bind(this);
@@ -20,55 +22,49 @@ class Recherche extends React.Component {
   componentDidMount() {
     setTimeout(() => this.setState({ loading: false }), 1000);
     axios
-      .get(
-        `https://www.thesportsdb.com/api/v1/json/1/searchevents.php?e`
-      )
+      .get(`https://www.thesportsdb.com/api/v1/json/1/searchevents.php?e`)
       .then((res) => res.data)
       .then((data) => {
-       console.log(data);
-       
+        console.log(data);
+
         const { seasons } = this.state;
-    data.event.forEach(season => {
-        if (seasons.length === 0) {
+        data.event.forEach((season) => {
+          if (seasons.length === 0) {
             seasons.push(season.strSeason);
-        }
-        
-        seasons.forEach(year => {
-            if ( season.strSeason !== year ) {
-                seasons.push(season.strSeason);
+          }
+
+          seasons.forEach((year) => {
+            if (season.strSeason !== year) {
+              seasons.push(season.strSeason);
             }
+          });
         });
-    });
-        
+
         this.setState({
           event: data.event,
           seasons: seasons,
         });
       });
     // this.setState({event : [{strSeason: "1950-1951"},{strSeason: "1951-1952"}]});
-    
-  
   }
 
-  
   getRecherche() {
-    
     if (this.state.selectedSeason !== "") {
-    axios
-      .get(
-        `https://www.thesportsdb.com/api/v1/json/1/searchevents.php?e&s=${this.state.selectedSeason}`
-      )
-      .then((res) => res.data)
-      .then((data) => {
-        this.setState({
-          event: data.event,
+      axios
+        .get(
+          `https://www.thesportsdb.com/api/v1/json/1/searchevents.php?e&s=${this.state.selectedSeason}`
+        )
+        .then((res) => res.data)
+        .then((data) => {
+          this.setState({
+            event: data.event,
+          });
         });
-      });
     }
   }
 
   handleChangeSeason(e) {
-    this.setState({selectedSeason: e.target.value})
+    this.setState({ selectedSeason: e.target.value });
   }
 
   render() {
@@ -88,28 +84,34 @@ class Recherche extends React.Component {
     //   );
     // }
 
-
     return (
       <div>
-        
-          <div>
-            <label>
-              <select type="select" value ={this.state.selectedSeason} onChange={this.handleChangeSeason}>
+        <div>
+          <label>
+            <select
+              type="select"
+              value={this.state.selectedSeason}
+              onChange={this.handleChangeSeason}
+            >
               {seasons.map((season) => (
                 <option value={season}>{season}</option>
-                ))}
-              </select>
-            </label>
-          </div>
-        
+              ))}
+            </select>
+          </label>
+        </div>
+
         <button type="button" onClick={this.getRecherche}>
           Give me the results
         </button>
+        <div className="resultats">
+        <h2 className="titreResultat">Results</h2>
+        
+        
         {event.map((season) => (
-          <div>
+          <div >
             <Resultat
               key={season.idEvent}
-              strSeason={season.strSeason}    
+              strSeason={season.strSeason}
               strHomeTeam={season.strHomeTeam}
               strAwayTeam={season.strAwayTeam}
               intHomeScore={season.intHomeScore}
@@ -117,6 +119,7 @@ class Recherche extends React.Component {
             />
           </div>
         ))}
+        </div>
       </div>
     );
   }
