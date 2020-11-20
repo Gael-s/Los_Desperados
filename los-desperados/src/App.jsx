@@ -6,6 +6,7 @@ import Footer from "./components/Footer"
 import Recherche from "./components/Recherche"
 
 import './App.css';
+import Resultat from './components/Resultat/Resultat'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Header/>
         <Presentation />
         <Recherche />
+        <Resultat/>
         <Footer />
     </div>
 
