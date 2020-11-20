@@ -1,0 +1,82 @@
+*{
+box-sizing: border-box;
+padding: 0;
+margin: 0;
+}
+
+.resultats{
+    font-family: "roboto", sans-serif;
+    background: linear-gradient(180deg, #F3831E, white);    
+    padding-top: 30px;
+}
+
+.titreResultat{
+    color: white;
+    padding-bottom: 30px;
+}
+
+
+.leFlex{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+.card{
+    border-radius: 15px;
+    background: #FAFAFA;
+    border: 1px solid black;
+    width: 80%;
+    margin-bottom: 40px;
+    padding: 20px;
+}
+
+.title-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    padding: 20px;   
+}
+
+.date-event{
+    color: black;
+    font-size: 20px;
+}
+.saisons{
+    color: black;
+    font-size: 10px;
+    margin-bottom: ;
+}
+.teams{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 20px;   
+}
+
+.team-name{
+    color: black;
+    font-size: 40px;
+}
+.Score{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 40px 20%;
+    
+}
+.theScore{
+    color: black;
+    font-size: 80px;
+    font-weight: bold;
+}
+.tiret{
+    color: #CF2A26;
+    font-size: 80px;
+    font-weight: bold;
+
+}
+
+
