@@ -2,9 +2,9 @@ import React from "react";
 
 import axios from "axios";
 
-import Resultat from "./Resultat/Resultat";
+import Resultat from "../Resultat/Resultat";
 
-import "./Resultat/Resultat.css";
+import "../Resultat/Resultat.css";
 import "./Recherche.css";
 
 class Recherche extends React.Component {

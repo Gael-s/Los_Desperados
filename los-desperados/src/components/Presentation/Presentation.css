@@ -1,0 +1,26 @@
+
+  .container__presentation {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  img {
+background-color: burlywood;
+border-radius: 50%;
+width: auto;
+height: 400px;
+margin-top: 100px;
+  }
+
+
+  .presentation__title {
+    width: 35%;
+    height: 40rem;
+    background-color: #fd342c;
+    color: white;
+  }
+  
+  .presentation__text {
+    background-color: aqua;
+    
+  }
